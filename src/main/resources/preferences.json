@@ -1,0 +1,31 @@
+[
+  {
+    "key": "firewall_mode",
+    "type": "select",
+    "items": [
+      {
+        "key": "blacklist"
+      },
+      {
+        "key": "whitelist"
+      }
+    ],
+    "defaultValue": "blacklist"
+  },
+  {
+    "key": "filtration_mode",
+    "type": "select",
+    "items": [
+      {
+        "key": "dns"
+      },
+      {
+        "key": "proxy"
+      },
+      {
+        "key": "both"
+      }
+    ],
+    "defaultValue": "proxy"
+  }
+]

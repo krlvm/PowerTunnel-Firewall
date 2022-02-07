@@ -31,7 +31,7 @@ configure(fatJar) {
 dependencies {
     implementation('io.github.krlvm.powertunnel:sdk') {
         version {
-            branch = 'next'
+            branch = 'master'
         }
     }
 

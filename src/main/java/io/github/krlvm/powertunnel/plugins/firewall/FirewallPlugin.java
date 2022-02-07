@@ -41,6 +41,11 @@ public class FirewallPlugin extends PowerTunnelPlugin {
 
     @Override
     public void onProxyInitialization(@NotNull ProxyServer proxy) {
+        if (!proxy.areHostnamesAvailable()) {
+            LOGGER.warn("Firewall plugin is not available when VPN-level hostname resolving is enabled");
+            return;
+        }
+
         String[] hosts;
         try {
             final String s = readTextFile("firewall-hosts.txt");

@@ -34,7 +34,7 @@ public class DNSListener extends ProxyAdapter {
     }
 
     @Override
-    public boolean onResolutionRequest(@NotNull DNSRequest request) {
+    public Boolean onResolutionRequest(@NotNull DNSRequest request) {
         if(request.getResponse() == null && firewall.isBlocked(request.getHost())) {
             request.setResponse(LOCALHOST);
         }

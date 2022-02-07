@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'io.github.krlvm.powertunnel.plugins'
-version '1.0'
+version '1.0.1'
 
 repositories {
     mavenCentral()
@@ -12,20 +12,6 @@ repositories {
 configurations {
     fatImplementation
     compile.extendsFrom(fatImplementation)
-}
-
-task fatJar(type: Jar) {
-    archiveClassifier = 'all'
-    from {
-        configurations.fatImplementation.asFileTree.files.collect { zipTree(it) }
-    } {
-        exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
-    }
-    with jar
-}
-configure(fatJar) {
-    group = 'build'
-    description = 'Assembles a jar archive containing the main classes and all dependencies.'
 }
 
 dependencies {

@@ -56,6 +56,7 @@ public class FirewallPlugin extends PowerTunnelPlugin {
         }
         if(hosts.length == 0) {
             LOGGER.warn("Filtration list is empty");
+            return;
         }
 
         String accessDeniedHtml;
